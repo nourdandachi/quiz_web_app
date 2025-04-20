@@ -82,7 +82,7 @@ nav {
     text-align: center;
     box-shadow: 0 0 20px rgba(6, 214, 160, 0.2);
     overflow: hidden;
-    background-clip: padding-box; /* 👈 this stops the inner gradient from showing! */
+    background-clip: padding-box;
   }
   
   .quiz-box::before {
