@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body class="dashboard-body">
+  <header class="dashboard-header">
+    <div class="left-head">
+        <h1>Welcome name</h1>
+    </div>
+    <div class="right-head">
+        <a href="login.html" id="login-link">Logout</a>
+    </div>
+  </header>
+
+  <section class="dashboard-stats">
+    <div class="stat-card">
+      <h3>Total Users</h3>
+      <p id="total-users">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>Average Score</h3>
+      <p id="average-score">0%</p>
+    </div>
+    <div class="stat-card">
+      <h3>Total Quizzes</h3>
+      <p id="total-quizzes">0</p>
+    </div>
+  </section>
+
+  <section class="dashboard-users">
+    <h2>Registered Users</h2>
+    <table>
+      <thead>
+        <tr>
+            <th>#</th>
+            <th>Email</th>
+            <th>Quiz 1</th>
+            <th>Quiz 2</th>
+            <th>Quiz 3</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="users-table-body">
+        <tr>
+            <td>1</td>
+            <td>user1@example.com</td>
+            <td>80%</td>
+            <td>90%</td>
+            <td>100%</td>
+            <td><button class="delete-btn">Delete</button></td>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>user1@example.com</td>
+            <td>80%</td>
+            <td>90%</td>
+            <td>100%</td>
+            <td><button class="delete-btn">Delete</button></td>
+          </tr>
+
+        
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>
