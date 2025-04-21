@@ -20,8 +20,28 @@ if (user) {
     navLinks.appendChild(dashboardLink);
   }
 } else {
+  scoresDiv= document.querySelector(".user-scores");
   userStatus.textContent = "Welcome, Guest";
+  scoresDiv.style.visibility= "hidden";
+
 }
+
+if (user && user.scores) {
+  const quizOrder = ["Intro to CS", "Data Structures", "Algorithms & Analysis"];
+  const scoresDiv = document.getElementById("user-scores");
+  
+  let scoreHTML = quizOrder.map(quiz => {
+    const data = user.scores[quiz];
+    return `<p>${quiz}: ${data ? data.score + "%" : "Not taken"}</p>`;
+  }).join("");
+  
+  scoresDiv.innerHTML = `
+    <h3>Your Quiz Results:</h3>
+    ${scoreHTML}
+  `;
+  
+}
+
 
 const startButtons = document.querySelectorAll(".start-btn");
 const quizTitles = document.querySelectorAll(".quiz-box .quiz-title");
