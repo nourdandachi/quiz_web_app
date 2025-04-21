@@ -152,9 +152,17 @@ nav {
   .btn-footer {
     position: fixed;
     bottom: 30px;
-    right: 40px;
+    right: 20px; 
     z-index: 100;
   }
+  
+  @media (max-width: 600px) {
+    .btn-footer {
+      right: 10px;
+      bottom: 20px;
+    }
+  }
+  
   
   #next-btn {
     padding: 12px 30px;
