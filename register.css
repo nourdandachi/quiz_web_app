@@ -136,3 +136,46 @@ label {
     color: #8338ec;
     text-shadow: 0 0 6px #8338ecaa;
   }
+
+
+  @media (max-width: 600px) {
+    .register-body {
+      padding: 20px;
+      height: auto;
+    }
+  
+    .register-container {
+      width: 70%;
+      max-width: 100%;
+      border-radius: 0.5cm;
+      padding: 25px 20px;
+    }
+  
+    #welcome-title {
+      font-size: 1.6rem;
+    }
+  
+    #register-msg {
+      font-size: 1rem;
+    }
+  
+    .input-group input {
+      font-size: 0.95rem;
+      padding: 8px;
+    }
+  
+    label {
+      font-size: 0.9rem;
+    }
+  
+    #register-btn {
+      width: 100%;
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    #login-msg {
+      font-size: 0.85rem;
+    }
+  }
+  
