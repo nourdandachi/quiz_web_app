@@ -12,7 +12,7 @@ const nextBtn = document.getElementById("next-btn");
 quizTitle.textContent = quizName;
 
 function loadQuestion() {
-  const quizzes = JSON.parse(localStorage.getItem("quizzes")); // ✅ re-read live each time
+  const quizzes = JSON.parse(localStorage.getItem("quizzes"));
   const currentQuiz = quizzes[quizName];
   const q = currentQuiz[currentQuestionIndex];
 
@@ -45,7 +45,7 @@ nextBtn.addEventListener("click", () => {
 
   const selectedIndex = parseInt(selected.dataset.index);
 
-  const quizzes = JSON.parse(localStorage.getItem("quizzes")); // ✅ re-read again
+  const quizzes = JSON.parse(localStorage.getItem("quizzes"));
   const currentQuiz = quizzes[quizName];
 
   if (selectedIndex === currentQuiz[currentQuestionIndex].answer) {
