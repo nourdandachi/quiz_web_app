@@ -1,14 +1,5 @@
-let user = JSON.parse(sessionStorage.getItem("loggedInUser")); 
-const quizzes = JSON.parse(localStorage.getItem("quizzes"));
-
-if (!user || !user.selectedQuiz || !quizzes) {
-  alert("No quiz selected or user not logged in.");
-  window.location.href = "index.html";
-}
-
+const user = JSON.parse(sessionStorage.getItem("loggedInUser"));
 const quizName = user.selectedQuiz;
-const currentQuiz = quizzes[quizName];
-
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -21,7 +12,10 @@ const nextBtn = document.getElementById("next-btn");
 quizTitle.textContent = quizName;
 
 function loadQuestion() {
+  const quizzes = JSON.parse(localStorage.getItem("quizzes")); // ✅ re-read live each time
+  const currentQuiz = quizzes[quizName];
   const q = currentQuiz[currentQuestionIndex];
+
   questionNumber.textContent = currentQuestionIndex + 1;
   questionText.textContent = q.question;
 
@@ -50,6 +44,10 @@ nextBtn.addEventListener("click", () => {
   }
 
   const selectedIndex = parseInt(selected.dataset.index);
+
+  const quizzes = JSON.parse(localStorage.getItem("quizzes")); // ✅ re-read again
+  const currentQuiz = quizzes[quizName];
+
   if (selectedIndex === currentQuiz[currentQuestionIndex].answer) {
     score++;
   }
@@ -66,6 +64,7 @@ nextBtn.addEventListener("click", () => {
     };
 
     sessionStorage.setItem("loggedInUser", JSON.stringify(user));
+
     let users = JSON.parse(localStorage.getItem("users")) || [];
     users = users.map(u => u.email === user.email ? user : u);
     localStorage.setItem("users", JSON.stringify(users));

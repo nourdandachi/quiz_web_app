@@ -138,8 +138,78 @@ tbody tr:hover {
     font-weight: bold;
     text-shadow: 0 0 8px #06d6a0, 0 0 12px #8338ec;
     margin-bottom: 10px;
+    margin-left: 40px;
     
 }
 
+.middle-head {
+    display: flex;
+    gap: 20px;
+  }
   
+  .nav-middle-link {
+    font-weight: bold;
+    color: #06d6a0;
+    text-decoration: none;
+    transition: 0.3s;
+  }
   
+  .nav-middle-link:hover {
+    color: #8338ec;
+    text-shadow: 0 0 8px #8338ecaa;
+  }
+  
+  .quiz-edit-container {
+    max-width: 90%;
+    margin: 30px auto 50px;
+    background-color: #121638;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(6, 214, 160, 0.3);
+  }
+  
+  .quiz-edit-container label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #06d6a0;
+  }
+  
+  .quiz-edit-container input,
+  .quiz-edit-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background: #0c0f29;
+    border: 1px solid #06d6a0;
+    border-radius: 10px;
+    color: white;
+    font-family: inherit;
+    margin-bottom: 10px;
+  }
+  
+  #save-quiz-btn {
+    margin-top: 20px;
+    padding: 12px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #06d6a0, #8338ec);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  #save-quiz-btn:hover {
+    box-shadow: 0 0 12px #8338ec, 0 0 8px #06d6a0;
+    transform: scale(1.03);
+  }
+  
+.registered-title{
+    text-align: center;
+}
+  
+   .option-input {
+    margin-bottom: 10px;
+  }

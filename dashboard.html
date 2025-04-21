@@ -11,10 +11,13 @@
     <div class="left-head">
       <h2 id="admin-welcome">Welcome</h2>
     </div>
+    <div class="middle-head">
+      <a href="#users-section" class="nav-middle-link">Registered Users</a>
+      <a href="#edit-section" class="nav-middle-link">Edit Questions</a>
+    </div>
     <div class="right-head">
-        <a href="index.html" id="home-link">Home</a>
-        <a href="login.html" id="login-link">Logout</a>
-        
+      <a href="index.html" id="home-link">Home</a>
+      <a href="login.html" id="login-link">Logout</a>
     </div>
   </header>
 
@@ -33,27 +36,56 @@
     </div>
   </section>
 
-  <section class="dashboard-users">
+  <section class="dashboard-users" id="users-section">
     <div class="user-table-container">
-    <h2 class="registered-title">Registered Users</h2>
-    <table>
-      <thead>
-        <tr>
-            <th>#</th>
-            <th>Email</th>
-            <th>Quiz 1</th>
-            <th>Quiz 2</th>
-            <th>Quiz 3</th>
-            <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="users-table-body">
-      
-      </tbody>
-    </table>
-    </div>
+      <h2 class="registered-title">Registered Users</h2>
+      <table>
+        <thead>
+          <tr>
+              <th>#</th>
+              <th>Email</th>
+              <th>Quiz 1</th>
+              <th>Quiz 2</th>
+              <th>Quiz 3</th>
+              <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="users-table-body"></tbody>
+      </table>
+    </div><h2 class="registered-title">Edit Quiz Questions</h2>
   </section>
-  <script src="dashboard.js"></script>
+  <section class="quiz-edit-container" id="edit-section">
+    
 
+    <form id="quiz-edit-form">
+      <label for="quiz-selector">Select Quiz:</label>
+      <select id="quiz-selector">
+        <option value="Intro to CS">Intro to CS</option>
+        <option value="Data Structures">Data Structures</option>
+        <option value="Algorithms & Analysis">Algorithms & Analysis</option>
+      </select>
+
+      <label for="question-number">Question Number:</label>
+      <select id="question-number"></select>
+
+      <label for="question-text">Question:</label>
+      <input type="text" id="question-text" required />
+
+      <div id="options-container">
+        <label>Options:</label>
+        <input type="text" class="option-input" data-index="0" placeholder="Option 1" required />
+        <input type="text" class="option-input" data-index="1" placeholder="Option 2" required />
+        <input type="text" class="option-input" data-index="2" placeholder="Option 3" required />
+        <input type="text" class="option-input" data-index="3" placeholder="Option 4" required />
+      </div>
+
+      <label for="correct-answer">Correct Answer (0–3):</label>
+      <input type="number" id="correct-answer" min="0" max="3" required />
+
+      <button type="submit" id="save-quiz-btn">Save Changes</button>
+    </form>
+  </section>
+
+  <script src="dashboard.js"></script>
 </body>
 </html>

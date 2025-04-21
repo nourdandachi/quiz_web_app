@@ -38,11 +38,9 @@ startButtons.forEach((btn, index) => {
     }
 
     currentUser.selectedQuiz = quizName;
-    sessionStorage.setItem("loggedInUser", JSON.stringify(currentUser));
+sessionStorage.setItem("loggedInUser", JSON.stringify(currentUser));
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-    users = users.map(u => u.email === currentUser.email ? currentUser : u);
-    localStorage.setItem("users", JSON.stringify(users));
+
 
     window.location.href = "quiz.html";
   });

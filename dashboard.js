@@ -50,3 +50,70 @@ document.querySelectorAll(".delete-btn").forEach(button => {
     location.reload();
   });
 });
+
+const quizData = JSON.parse(localStorage.getItem("quizzes")) || {};
+const quizSelector = document.getElementById("quiz-selector");
+const questionNumberSelect = document.getElementById("question-number");
+const questionInput = document.getElementById("question-text");
+const optionInputs = document.querySelectorAll(".option-input");
+const correctInput = document.getElementById("correct-answer");
+const saveBtn = document.getElementById("save-quiz-btn");
+
+function populateQuestionNumbers(quizName) {
+  const questions = quizData[quizName];
+  questionNumberSelect.innerHTML = "";
+
+  questions.forEach((_, index) => {
+    const opt = document.createElement("option");
+    opt.value = index;
+    opt.textContent = `Question ${index + 1}`;
+    questionNumberSelect.appendChild(opt);
+  });
+
+  loadQuestionToEditor(quizName, 0);
+}
+
+function loadQuestionToEditor(quizName, index) {
+  const q = quizData[quizName][index];
+  questionInput.value = q.question;
+  q.options.forEach((text, i) => {
+    optionInputs[i].value = text;
+  });
+  correctInput.value = q.answer;
+}
+
+saveBtn.addEventListener("click", () => {
+  const quizName = quizSelector.value;
+  const questionIndex = parseInt(questionNumberSelect.value);
+
+  const updatedQuestion = {
+    question: questionInput.value.trim(),
+    options: Array.from(optionInputs).map(i => i.value.trim()),
+    answer: parseInt(correctInput.value)
+  };
+
+  if (
+    !updatedQuestion.question ||
+    updatedQuestion.options.length !== 4 ||
+    updatedQuestion.options.some(opt => !opt) ||
+    isNaN(updatedQuestion.answer) ||
+    updatedQuestion.answer < 0 ||
+    updatedQuestion.answer > 3
+  ) {
+    alert("Please fill all fields correctly.");
+    return;
+  }
+
+  quizData[quizName][questionIndex] = updatedQuestion;
+  localStorage.setItem("quizzes", JSON.stringify(quizData));
+  alert("Question updated successfully!");
+});
+
+quizSelector.addEventListener("change", () => {
+  populateQuestionNumbers(quizSelector.value);
+});
+
+questionNumberSelect.addEventListener("change", () => {
+  loadQuestionToEditor(quizSelector.value, parseInt(questionNumberSelect.value));
+});
+populateQuestionNumbers(quizSelector.value);
