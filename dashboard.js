@@ -45,11 +45,16 @@ document.getElementById("average-score").textContent = `${avgScore}%`;
 document.querySelectorAll(".delete-btn").forEach(button => {
   button.addEventListener("click", () => {
     const index = parseInt(button.dataset.index);
-    users.splice(index, 1);
-    localStorage.setItem("users", JSON.stringify(users));
-    location.reload();
+    const confirmed = confirm("Are you sure you want to delete this user?");
+
+    if (confirmed) {
+      users.splice(index, 1);
+      localStorage.setItem("users", JSON.stringify(users));
+      location.reload();
+    }
   });
 });
+
 
 const quizData = JSON.parse(localStorage.getItem("quizzes")) || {};
 const quizSelector = document.getElementById("quiz-selector");

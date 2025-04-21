@@ -160,12 +160,13 @@ tbody tr:hover {
   }
   
   .quiz-edit-container {
-    max-width: 90%;
-    margin: 30px auto 50px;
+    max-width: 78%;
+    margin: 30px auto 60px;
     background-color: #121638;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(6, 214, 160, 0.3);
+    
   }
   
   .quiz-edit-container label {
