@@ -177,3 +177,46 @@ nav {
     font-size: 1rem;
     padding-bottom: 10px;
 }
+
+
+@media (max-width: 600px) {
+  .user-scores {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .user-scores p {
+    display: block;
+    margin: 6px auto;
+    font-size: 0.95rem;
+  }
+
+  .quiz-box {
+    width: 90%;
+    height: auto;
+    padding: 20px 15px;
+  }
+
+  .start-btn {
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .nav-left, .nav-right {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: auto;
+  }
+}
