@@ -11,6 +11,7 @@ registerForm.addEventListener("submit", function (e) {
 
   if (password !== confirmPassword) {
     errorMsg.textContent = "Passwords do not match!";
+    errorMsg.style.visibility = 'visible';
     return;
   }
 
@@ -18,6 +19,7 @@ registerForm.addEventListener("submit", function (e) {
 
   if (users.find(user => user.email === email)) {
     errorMsg.textContent = "This email is already registered.";
+    errorMsg.style.visibility = 'visible';
     return;
   }
 

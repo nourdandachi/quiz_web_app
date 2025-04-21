@@ -12,7 +12,7 @@ loginForm.addEventListener("submit", function (e) {
   const user = users.find(u => u.email === email && u.password === password);
 
   if (user) {
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    sessionStorage.setItem("loggedInUser", JSON.stringify(user));
 
     if (user.email === "admin@quiz.com") {
       window.location.href = "dashboard.html";
@@ -21,5 +21,7 @@ loginForm.addEventListener("submit", function (e) {
     }
   } else {
     errorMsg.textContent = "Invalid email or password.";
+    errorMsg.style.visibility = 'visible';
+
   }
 });

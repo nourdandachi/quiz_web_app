@@ -1,4 +1,4 @@
-const admin = JSON.parse(localStorage.getItem("loggedInUser"));
+const admin = JSON.parse(sessionStorage.getItem("loggedInUser"));
 document.getElementById("admin-welcome").textContent = `Welcome, ${admin?.name || "Admin"}`;
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -38,9 +38,9 @@ users.forEach((user, index) => {
 
   tbody.appendChild(tr);
 });
+
 const avgScore = scoreCount ? Math.round(totalScoreSum / scoreCount) : 0;
 document.getElementById("average-score").textContent = `${avgScore}%`;
-
 
 document.querySelectorAll(".delete-btn").forEach(button => {
   button.addEventListener("click", () => {

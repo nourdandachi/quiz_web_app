@@ -1,5 +1,4 @@
-const user = JSON.parse(localStorage.getItem("loggedInUser"));
-
+const user = JSON.parse(sessionStorage.getItem("loggedInUser"));
 const userStatus = document.getElementById("user-status");
 if (user && userStatus) {
   userStatus.textContent = `Welcome, ${user.name}`;
@@ -14,7 +13,6 @@ if (!user || !user.selectedQuiz || !user.scores || !user.scores[user.selectedQui
 
 const quizName = user.selectedQuiz;
 const result = user.scores[quizName];
-
 
 document.querySelector(".quiz-name").textContent = quizName;
 document.getElementById("score-percent").textContent = `${result.score}%`;

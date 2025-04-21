@@ -18,7 +18,9 @@
     border-radius: 0.25cm;
     background: linear-gradient(145deg, #0c0f29, #141942);
     max-width: 400px; 
-    min-width: 300px; 
+    min-width: 300px;
+     
+
     
 }
 
@@ -34,9 +36,6 @@
     z-index: -1;
 }
 
-/* .input-group{
-   
-} */
 
 .input-group input{
     width: 100%;
